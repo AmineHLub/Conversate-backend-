@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :direct_comments
   resources :conversations
   resources :users
+  resources :reciption
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
