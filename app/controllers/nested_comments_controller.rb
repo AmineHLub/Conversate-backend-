@@ -16,7 +16,7 @@ class NestedCommentsController < ApplicationController
   # POST /nested_comments
   def create
     @nested_comment = NestedComment.new(nested_comment_params)
-
+    @nested_comment.username = User.find(@nested_comment.user_id).name
     if @nested_comment.save
       render json: @nested_comment, status: :created, location: @nested_comment
     else

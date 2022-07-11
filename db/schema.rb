@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_132827) do
 
   create_table "direct_comments", force: :cascade do |t|
     t.text "text"
+    t.text "username"
     t.bigint "user_id", null: false
     t.bigint "conversation_id", null: false
     t.datetime "created_at", null: false
@@ -35,6 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_132827) do
 
   create_table "nested_comments", force: :cascade do |t|
     t.text "text"
+    t.text "username"
     t.bigint "user_id", null: false
     t.bigint "direct_comment_id", null: false
     t.datetime "created_at", null: false

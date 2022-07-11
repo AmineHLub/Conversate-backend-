@@ -21,6 +21,7 @@ class ReciptionController < ApplicationController
     @convo_json = {
       id: @convo.id,
       password: @convo.password,
+      text: @convo.text,
       # owner: User.find(@convo.user_id),
       comments: comments_json(@convo.direct_comments)
     }
