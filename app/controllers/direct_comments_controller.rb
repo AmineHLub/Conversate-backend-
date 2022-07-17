@@ -16,7 +16,10 @@ class DirectCommentsController < ApplicationController
   # POST /direct_comments
   def create
     @direct_comment = DirectComment.new(direct_comment_params)
-    @direct_comment.username = User.find(@direct_comment.user_id).name
+    @direct_comment.username = { 
+      name: User.find(@direct_comment.user_id).name,
+      img: User.find(@direct_comment.user_id).img }.to_json
+      
     if @direct_comment.save
       render json: @direct_comment, status: :created, location: @direct_comment
     else

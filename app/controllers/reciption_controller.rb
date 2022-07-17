@@ -22,6 +22,7 @@ class ReciptionController < ApplicationController
       id: @convo.id,
       password: @convo.password,
       text: @convo.text,
+      created_at: @convo.created_at.to_date,
       # owner: User.find(@convo.user_id),
       comments: comments_json(@convo.direct_comments)
     }
